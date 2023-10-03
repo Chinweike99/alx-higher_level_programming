@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-eAscci = ord('q')
-jAscci = ord('e')
+for letter in range(97, 123):
+    if chr(letter) != 'q' and chr(letter) != 'e':
+        print("{}".format(chr(letter)), end="")
 
-for ascci_value in range(97, 123):
-    if ascci_value != eAscci and ascci_value != jAscci:
-        print(chr(ascci_value), end = "")
