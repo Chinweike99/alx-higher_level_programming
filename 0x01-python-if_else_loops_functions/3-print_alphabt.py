@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-eAscci = ord('e')
-jAscci = ord('j')
+eAscci = ord('q')
+jAscci = ord('e')
 
 for ascci_value in range(97, 123):
     if ascci_value != eAscci and ascci_value != jAscci:
