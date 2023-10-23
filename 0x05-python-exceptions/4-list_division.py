@@ -19,4 +19,6 @@ def list_division(my_list_1, my_list_2, list_length):
                     result[i] = value_1 / value_2
         except IndexError:
             print("out of range")
-    return result
+
+        finally:
+            return result
