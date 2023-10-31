@@ -1,30 +1,38 @@
 #!/usr/bin/python3
-"""Write a class Rectangle that defines a rectangle by: (based on 1-rectangle.py)"""
-class Rectangle:
-    def __init__(self, width=0, height=0):
-        """
-        This constructor Initializes a Rectangle with optional width and height.
+"""A script that defines a Rectangle and gets Area and Perimeter"""
 
-        :param width: Width of the rectangle (default is 0)
-        :param height: Height of the rectangle (default is 0)
+
+class Rectangle:
+    """Rectangle class"""
+    def __init__(self, width=0, height=0):
+        """Initializer of rectangle class
+
+        Args:
+            width: the width of the rectangle (int)
+            height: the height of the rectangle (int)
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
-        """
-         This property Retrieves the width of the rectangle.
+        """Width setter
+
+        Raises:
+            TypeError: if value not an integer
+            ValueError: if value is < 0
         """
         return self.__width
 
     @width.setter
     def width(self, value):
+        """Width setter
+
+        Raises:
+            TypeError: if value not an integer
+            ValueError: if value is < 0
         """
-        This Set the width of the rectangle.
-        :param value: The width to set.
-        """
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
@@ -32,36 +40,37 @@ class Rectangle:
 
     @property
     def height(self):
-        """
-        Retrieve the height of the rectangle.
+        """Height getter
+
+        Returns:
+            the height of the rectangle  (int)
         """
         return self.__height
 
     @height.setter
     def height(self, value):
-        """
-        Set the height of the rectangle.
-
-        :param value: The height to set.
-        """
-        if not isinstance(value, int):
+        """Height setter"""
+        if type(value) is not int:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
 
     def area(self):
-        """
-        Calculate and return the area of the rectangle.
+        """Returns the area of the rectangle
 
-        :return: The area of the rectangle.
+        Returns:
+            the rectangle area (int)
         """
         return self.__width * self.__height
 
     def perimeter(self):
-        """
-        Calculate and return the perimeter of the rectangle.
+        """Returns the perimeter of the rectangle
 
-        :return: The perimeter of the rectangle.
+        Returns:
+            0 if one of width or height is none
+            the rectangle perimeter (int)
         """
-        return 0 if self.__width == 0 or self.__height == 0 else 2 * (self.__width + self.__height)
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        return (self.__width + self.__height)*2
