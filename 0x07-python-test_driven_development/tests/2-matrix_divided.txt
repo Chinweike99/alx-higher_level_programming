@@ -1,0 +1,17 @@
+# 2-matrix_divided.txt
+# Test cases for matrix_divide function
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+>>> matrix_divided([[2, 3, 0], [4, 5, 3]], 1)
+[[2.0, 3.0, 0.0], [4.0, 5.0, 3.0]]
+
+>>> matrix_divided([[2, 3, 5], [0, 2, 4]], 0)
+Traceback (most recent call last):
+  ...
+ZeroDivisionError: division by zero
+
+>>> matrix_divided([[3, 5, 2], [6, 8, 4]], -2)
+[[-1.5, -2.5, -1.0], [-3.0, -4.0, -2.0]]
+
+>>> matrix_divided([[12, 6, 8], [9, 12, 7]], 3)
+[[4.0, 2.0, 2.67], [3.0, 4.0, 2.33]]
