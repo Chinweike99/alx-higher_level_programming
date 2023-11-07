@@ -2,5 +2,7 @@
 """Geometry Module"""
 
 class BaseGeometry:
-    """An empty class Geometry"""
+    """
+    An empty class Geometry
+    """
     pass
