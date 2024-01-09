@@ -1,8 +1,9 @@
 #!/usr/bin/node
-function factorial (nbr) {
-  if (!nbr || nbr < 2) {
-    return (1);
+const size = Number(process.argv[2]);
+if (size) {
+  for (let i = 0; i < size; i++) {
+    console.log('X'.repeat(size));
   }
-  return nbr * factorial(nbr - 1);
+} else {
+  console.log('Missing size');
 }
-console.log(factorial(Number(process.argv[2])));
