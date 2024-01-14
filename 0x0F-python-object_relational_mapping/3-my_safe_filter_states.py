@@ -11,7 +11,7 @@ def safe_filter_state():
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
-    search = sys.argv[4]
+    searched = sys.argv[4]
 
     db = MySQLdb.connect(host='localhost',
                          port=3306,
@@ -23,7 +23,7 @@ def safe_filter_state():
     cur.execute("SELECT * FROM states\
                 WHERE name = %(searched_name)s\
                 ORDER BY id ASC",
-                {'searched_name': search}
+                {'searched_name': searched}
                 )
     rows = cur.fetchall()
     for row in rows:

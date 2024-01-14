@@ -11,7 +11,7 @@ def search_state():
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
-    search = sys.argv[4]
+    searched = sys.argv[4]
 
     db = MySQLdb.connect(host='localhost',
                          port=3306,
@@ -23,7 +23,7 @@ def search_state():
     cur.execute("""SELECT *\
                 FROM states\
                 WHERE name LIKE BINARY '{}'\
-                ORDER BY id ASC""".format(search)
+                ORDER BY id ASC""".format(searched)
                 )
     rows = cur.fetchall()
     for row in rows:
